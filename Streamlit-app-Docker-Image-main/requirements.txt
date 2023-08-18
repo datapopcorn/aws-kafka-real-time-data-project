@@ -1,2 +1,5 @@
 ### dependency
 streamlit
+kafka-python
+pandas
+json
