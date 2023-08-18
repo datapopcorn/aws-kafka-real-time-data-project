@@ -1,0 +1,10 @@
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://172.31.45.0:8502
+  External URL: http://52.198.111.3:8502
+
+  Stopping...
