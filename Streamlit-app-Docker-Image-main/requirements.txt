@@ -2,3 +2,4 @@
 streamlit
 kafka-python
 pandas
+s3fs
