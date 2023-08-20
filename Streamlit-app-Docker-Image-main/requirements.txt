@@ -2,4 +2,3 @@
 streamlit
 kafka-python
 pandas
-json
