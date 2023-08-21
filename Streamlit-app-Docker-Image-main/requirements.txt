@@ -2,4 +2,4 @@
 streamlit
 kafka-python
 pandas
-json
+s3fs
