@@ -1,9 +1,9 @@
 # Streamlit app Docker Image
+
 ## 1. Login with your AWS console and launch an EC2 instance
 ## 2. Run the following commands
 
 Note: Do the port mapping to this port:- 8501
-
 
 Installing Docker on Amazon Linux 2023 server system will allow users a seamless and efficient way to deploy and manage applications within isolated containers.
 
@@ -61,7 +61,7 @@ git clone "your-project"
 ```
 
 ```bash
-docker build -t entbappy/stapp:latest . 
+docker build -t yancheng9999/stapp:latest . 
 ```
 
 ```bash
@@ -69,7 +69,7 @@ docker images -a
 ```
 
 ```bash
-docker run -d -p 8501:8501 entbappy/stapp 
+docker run -e AWS_ACCESS_KEY_ID=AKIAZECMEY6XF6RV74FX -e AWS_SECRET_ACCESS_KEY=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 -d -p 8501:8501 yancheng9999/stapp
 ```
 
 ```bash
@@ -89,13 +89,42 @@ docker login
 ```
 
 ```bash
-docker push entbappy/stapp:latest 
+docker push yancheng9999/stapp:latest 
 ```
 
 ```bash
-docker rmi entbappy/stapp:latest
+docker rmi yancheng9999/stapp:latest
 ```
 
 ```bash
-docker pull entbappy/stapp
+docker pull yancheng9999/stapp
+```
+
+# Ubuntu 22.04
+```bash
+sudo apt-get update -y
+
+sudo apt-get upgrade
+
+#Install Docker
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker ubuntu
+
+newgrp docker
+```
+
+
+
+# local run temperary
+```bash
+python3 -m streamlit run app.py
+```
+
+# local run permanent
+```bash
+nohup python3 -m streamlit run app.py
 ```

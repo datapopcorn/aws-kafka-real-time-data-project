@@ -12,6 +12,11 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip3 install -r requirements.txt
+COPY entrypoint.sh /entrypoint.sh
+COPY user_login_consumer.py /user_login_consumer.py
+COPY streamlit_producer_app.py /streamlit_producer_app.py
 
-ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+RUN pip3 install -r requirements.txt
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
