@@ -37,7 +37,7 @@ with st.form(key='my_form'):
                 'password': password,
                 'login_time': login_date}
 
-                producer.send('yelp_test', value=data)
+                producer.send('user_login', value=data)
                 producer.flush()
                 st.success('Data successfully submitted!!')
 
