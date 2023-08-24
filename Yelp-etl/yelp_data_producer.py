@@ -12,7 +12,7 @@ producer = KafkaProducer(bootstrap_servers='43.207.149.192:9092',
 with open(f"yelp_raw_data_sample/business_data_sample.json", 'r', encoding="utf-8") as f:
     for line_number, line in enumerate(f):
         obj = json.loads(line)
-        # obj["type"] = "business"
+
         producer.send('yelp_business_topic', value=obj)
         producer.flush()
         print(f"Sent business data message {line_number}")
@@ -22,7 +22,7 @@ with open(f"yelp_raw_data_sample/business_data_sample.json", 'r', encoding="utf-
 with open(f"yelp_raw_data_sample/user_data_sample.json", 'r', encoding="utf-8") as f:
     for line_number, line in enumerate(f):
         obj = json.loads(line)
-        # obj["type"] = "user"
+
         producer.send('yelp_user_topic', value=obj)
         producer.flush()
         print(f"Sent user data message {line_number}")
@@ -32,7 +32,7 @@ with open(f"yelp_raw_data_sample/user_data_sample.json", 'r', encoding="utf-8") 
 with open(f"yelp_raw_data_sample/review_data_sample.json", 'r', encoding="utf-8") as f:
     for line_number, line in enumerate(f):
         obj = json.loads(line)
-        # obj["type"] = "review"
+
         producer.send('yelp_review_topic', value=obj)
         producer.flush()
         print(f"Sent review data message {line_number}")
