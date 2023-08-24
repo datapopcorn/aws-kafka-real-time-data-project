@@ -4,7 +4,7 @@ from kafka import KafkaProducer
 from datetime import datetime
 
 
-st.header('Welcome to Barco!')
+st.header('Welcome to Yelp!')
 # st.markdown(
 #         """
 #         <style>
